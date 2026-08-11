@@ -22,3 +22,9 @@ bun run experiment:headless
 The tests and synthetic benchmark require no Salesforce credentials. Live extension execution requires an authorized Salesforce organization and is not part of artifact verification.
 
 See `ARTIFACT_MANIFEST.txt` for the sanitized file inventory and SHA-256 hashes.
+
+## Icon provenance
+
+The extension icon is an original AI-generated design created for this
+research artifact. It represents a capability graph passing through a governed
+execution boundary and does not reproduce Salesforce or other vendor branding.
