@@ -4,13 +4,30 @@ This archive accompanies the manuscript "Graph-Grounded Intent Resolution for En
 
 It contains source code, deterministic fixtures, tests, and design documentation needed to inspect the prototype mechanics described in the paper. Generated bundles, source maps, organization exports, internal repository references, development-machine paths, and operating-system metadata are intentionally excluded.
 
-## Requirements
+## Quick start
 
-- Bun 1.3 or later
-- Node.js 18 or later
-- A Chromium-compatible browser for extension loading
+Requirements: Node.js 18 or later, npm, Git, and Chrome or Edge.
 
-## Verification
+```text
+git clone https://github.com/Ishank-dubey/graph-grounded-intent-resolution.git
+cd graph-grounded-intent-resolution
+npm ci
+npm run typecheck
+npm run test:headless
+npm run experiment:headless
+npm run build
+```
+
+Then open `chrome://extensions` (or `edge://extensions`), enable **Developer
+mode**, choose **Load unpacked**, and select the repository directory. Open an
+authorized Salesforce organization and click the **OmniStudio Tools** toolbar
+icon.
+
+The repository installs a project-local Bun runtime through npm, so a global
+Bun installation is not required. See [`docs/INSTALLATION.md`](docs/INSTALLATION.md)
+for configuration, permissions, troubleshooting, and removal instructions.
+
+## Verification scope
 
 ```text
 bun install --frozen-lockfile
@@ -19,7 +36,9 @@ bun run test:headless
 bun run experiment:headless
 ```
 
-The tests and synthetic benchmark require no Salesforce credentials. Live extension execution requires an authorized Salesforce organization and is not part of artifact verification.
+The tests and synthetic benchmark require no Salesforce credentials. Live
+extension execution requires an authorized Salesforce organization and is not
+part of artifact verification.
 
 See `ARTIFACT_MANIFEST.txt` for the sanitized file inventory and SHA-256 hashes.
 
