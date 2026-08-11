@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniStudio DataPack</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <span class="header-title">◈ OmniStudio DataPack</span>
+    <span id="org-badge" class="org-badge">Not connected</span>
+  </header>
+
+  <!-- Auth error panel -->
+  <div id="auth-error" class="auth-error" hidden>
+    <p>Could not connect to a Salesforce org.</p>
+    <p class="auth-hint">Make sure you have an active Salesforce tab open.</p>
+  </div>
+
+  <!-- Main panel -->
+  <div id="main-panel" hidden>
+    <!-- Tab bar -->
+    <div class="tab-bar">
+      <button class="tab-btn active" data-type="OmniScript">OmniScript</button>
+      <button class="tab-btn" data-type="IntegrationProcedure">IP</button>
+      <button class="tab-btn" data-type="OmniUiCard">FlexCard</button>
+      <button class="tab-btn" data-type="DataRaptor">DataRaptor</button>
+    </div>
+
+    <!-- Options row -->
+    <div class="options-row">
+      <label class="option-label">
+        <input type="checkbox" id="active-only" />
+        Active only
+      </label>
+      <label class="option-label">
+        <input type="checkbox" id="include-deps" checked />
+        Include dependencies
+      </label>
+    </div>
+
+    <!-- Component list -->
+    <div class="list-header">
+      <label class="option-label select-all-label">
+        <input type="checkbox" id="select-all" />
+        <span>Select all</span>
+      </label>
+      <span id="list-count" class="list-count"></span>
+    </div>
+    <div id="component-list" class="component-list">
+      <div class="list-placeholder">Loading…</div>
+    </div>
+
+    <!-- Action bar -->
+    <div class="action-bar">
+      <button id="export-btn" class="btn-primary" disabled>↓ Export selected</button>
+      <label class="btn-secondary import-label" for="import-input">
+        ↑ Import…
+        <input type="file" id="import-input" accept=".json" style="display:none" />
+      </label>
+    </div>
+  </div>
+
+  <!-- Status bar -->
+  <div id="status-bar" class="status-bar"></div>
+
+  <script type="module" src="dist/popup.js"></script>
+</body>
+</html>

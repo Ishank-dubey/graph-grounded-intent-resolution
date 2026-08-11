@@ -1,0 +1,30 @@
+{
+  "name": "omnistudio-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:panel && npm run build:ext",
+    "build:panel": "vite build",
+    "build:panel:store": "OMNITOOLS_STORE_BUILD=true vite build",
+    "build:ext": "bun build src/background-dev.ts src/content.ts src/page-hook.ts --target browser --bundle --outdir dist",
+    "build:ext:store": "bun build src/background.ts src/content.ts src/page-hook.ts --target browser --bundle --outdir dist",
+    "build:store": "npm run build:panel:store && npm run build:ext:store",
+    "experiment:headless": "bun run experiments/headless-benchmark.ts",
+    "paper:build": "bash experiments/build-paper.sh",
+    "test:headless": "bun test experiments/headless-benchmark.test.ts src/headless/dataMapperResponse.test.ts src/headless/planningGuard.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0"
+  }
+}

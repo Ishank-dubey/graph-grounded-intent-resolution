@@ -1,0 +1,9 @@
+node_modules/
+dist/
+build-paper/
+*.map
+.DS_Store
+__MACOSX/
+.env
+.env.*
+!.env.example

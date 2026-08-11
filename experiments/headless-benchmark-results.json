@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-11T17:51:00.836Z",
+  "design": {
+    "graphSizes": [
+      20,
+      50,
+      100,
+      200,
+      500
+    ],
+    "intents": 25,
+    "domains": [
+      "onboarding",
+      "billing",
+      "claims",
+      "service",
+      "orders"
+    ],
+    "methods": [
+      "lexical-top1",
+      "graph-expanded"
+    ],
+    "seedBudget": 1,
+    "warmupRuns": 20,
+    "timingRuns": 100,
+    "note": "Deterministic synthetic benchmark; no LLM calls. Model evaluation is a separate experiment."
+  },
+  "scales": [
+    {
+      "nodes": 20,
+      "edges": 15,
+      "promptChars": 11990,
+      "approximateTokens": 2998,
+      "meanPromptBuildMs": 0.08762799999999941,
+      "p95PromptBuildMs": 0.18329999999998847
+    },
+    {
+      "nodes": 50,
+      "edges": 15,
+      "promptChars": 16964,
+      "approximateTokens": 4241,
+      "meanPromptBuildMs": 0.1469640000000004,
+      "p95PromptBuildMs": 0.234800000000007
+    },
+    {
+      "nodes": 100,
+      "edges": 15,
+      "promptChars": 25344,
+      "approximateTokens": 6336,
+      "meanPromptBuildMs": 0.23405499999999904,
+      "p95PromptBuildMs": 0.3739000000000203
+    },
+    {
+      "nodes": 200,
+      "edges": 15,
+      "promptChars": 42307,
+      "approximateTokens": 10577,
+      "meanPromptBuildMs": 0.3396610000000004,
+      "p95PromptBuildMs": 0.6096000000000004
+    },
+    {
+      "nodes": 500,
+      "edges": 15,
+      "promptChars": 93371,
+      "approximateTokens": 23343,
+      "meanPromptBuildMs": 0.8014519999999987,
+      "p95PromptBuildMs": 1.3289000000000328
+    }
+  ],
+  "retrieval": [
+    {
+      "nodes": 20,
+      "method": "lexical-top1",
+      "intents": 25,
+      "precision": 1,
+      "recall": 0.25,
+      "f1": 0.40000000000000013
+    },
+    {
+      "nodes": 20,
+      "method": "graph-expanded",
+      "intents": 25,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "nodes": 50,
+      "method": "lexical-top1",
+      "intents": 25,
+      "precision": 1,
+      "recall": 0.25,
+      "f1": 0.40000000000000013
+    },
+    {
+      "nodes": 50,
+      "method": "graph-expanded",
+      "intents": 25,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "nodes": 100,
+      "method": "lexical-top1",
+      "intents": 25,
+      "precision": 1,
+      "recall": 0.25,
+      "f1": 0.40000000000000013
+    },
+    {
+      "nodes": 100,
+      "method": "graph-expanded",
+      "intents": 25,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "nodes": 200,
+      "method": "lexical-top1",
+      "intents": 25,
+      "precision": 1,
+      "recall": 0.25,
+      "f1": 0.40000000000000013
+    },
+    {
+      "nodes": 200,
+      "method": "graph-expanded",
+      "intents": 25,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "nodes": 500,
+      "method": "lexical-top1",
+      "intents": 25,
+      "precision": 1,
+      "recall": 0.25,
+      "f1": 0.40000000000000013
+    },
+    {
+      "nodes": 500,
+      "method": "graph-expanded",
+      "intents": 25,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    }
+  ]
+}

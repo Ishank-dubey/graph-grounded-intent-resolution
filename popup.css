@@ -1,0 +1,293 @@
+:root {
+  --primary: #1a56db;
+  --primary-hover: #1e429f;
+  --success: #10b981;
+  --error: #ef4444;
+  --text: #111827;
+  --text-secondary: #6b7280;
+  --border: #e5e7eb;
+  --bg-light: #f3f4f6;
+  --bg-lighter: #f9fafb;
+  --bg-white: #ffffff;
+  --radius: 6px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 0.875rem;
+  color: var(--text);
+  background: var(--bg-white);
+  width: 380px;
+  min-height: 80px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.header {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+.org-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.org-badge.connected {
+  background: var(--success);
+  color: #fff;
+}
+
+.org-badge.error {
+  background: var(--error);
+  color: #fff;
+}
+
+/* ── Auth error ──────────────────────────────────────────────────────────── */
+.auth-error {
+  padding: 16px;
+  background: #fef2f2;
+  border-bottom: 1px solid #fecaca;
+  color: #b91c1c;
+  font-size: 0.8rem;
+}
+
+.auth-hint {
+  margin-top: 4px;
+  color: var(--text-secondary);
+}
+
+/* ── Tab bar ─────────────────────────────────────────────────────────────── */
+.tab-bar {
+  display: flex;
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.tab-btn:hover {
+  background: var(--bg-white);
+  color: var(--text);
+}
+
+.tab-btn.active {
+  background: var(--bg-white);
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ── Options row ────────────────────────────────────────────────────────── */
+.options-row {
+  display: flex;
+  gap: 16px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-lighter);
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.option-label input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+/* ── List header ────────────────────────────────────────────────────────── */
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-lighter);
+}
+
+.select-all-label {
+  font-weight: 500;
+}
+
+.list-count {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+/* ── Component list ─────────────────────────────────────────────────────── */
+.component-list {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border);
+  overflow-y: auto;
+  max-height: 280px;
+}
+
+.list-placeholder {
+  padding: 20px 12px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.component-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+
+.component-row:last-child {
+  border-bottom: none;
+}
+
+.component-row:hover {
+  background: var(--bg-lighter);
+}
+
+.component-row input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--primary);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.component-name {
+  flex: 1;
+  font-size: 0.8rem;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge {
+  font-size: 0.68rem;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--bg-light);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+/* ── Action bar ─────────────────────────────────────────────────────────── */
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.btn-primary {
+  flex: 1;
+  padding: 7px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.import-label {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── Status bar ─────────────────────────────────────────────────────────── */
+.status-bar {
+  background: var(--bg-lighter);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-top: 1px solid var(--border);
+  min-height: 28px;
+}
+
+.status-bar[data-type="success"] {
+  color: var(--success);
+}
+
+.status-bar[data-type="error"] {
+  color: var(--error);
+}
+
+.status-bar[data-type="info"] {
+  color: var(--primary);
+}
